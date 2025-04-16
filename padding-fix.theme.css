@@ -1,0 +1,35 @@
+/* Sane discord theme */
+:root {
+  /* Padding Fix Variables */
+  --hide-top-bs: 36px;
+  --guilds-offset: 6px;
+
+  /* Discord Provided Variable Override */
+  --custom-guild-list-padding: 10px;
+}
+
+[class^="container"] {
+  /* Make the chat bar less padded based on how much we shift things */
+  --custom-chat-input-margin-bottom: calc(10px + var(--guilds-offset));
+}
+
+/* Hide the details in the top bar */
+[class^="bar"] {
+  display: none;
+}
+
+/* Shift the entire page up to hide most of the top bar */
+[class^="base"] {
+  top: calc(0px - var(--hide-top-bs));
+  height: calc(100% + var(--hide-top-bs));
+}
+
+/* Shift everything but the Guilds sidebar down to make it look half decent */
+[class^="sidebarList"], [class^="page"] {
+  margin-top: var(--guilds-offset);
+}
+
+/* Add padding to the guilds sidebar at the top inside the scrollable asset */
+[class^="stack"] {
+  padding-top: var(--guilds-offset) !important;
+}
