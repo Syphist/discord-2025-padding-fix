@@ -1,16 +1,32 @@
 /* Sane discord theme */
+
+/* Variables */
 :root {
   /* Padding Fix Variables */
   --hide-top-bs: 36px;
   --guilds-offset: 6px;
+  --attach-side-padding: 8px;
+  --text-area-left-margin: 2px;
 
   /* Discord Provided Variable Override */
   --custom-guild-list-padding: 10px;
+  --custom-channel-textarea-text-area-height: calc(34px + var(--space-xs));
 }
 
+/* Make the chat bar less padded based on how much we shift things */
 [class^="container"] {
-  /* Make the chat bar less padded based on how much we shift things */
-  --custom-chat-input-margin-bottom: calc(10px + var(--guilds-offset));
+  --custom-chat-input-margin-bottom: calc(15px + var(--guilds-offset));
+}
+
+/* Less side padding on the attach button */
+[class^="attachButton"] {
+  padding-left: var(--attach-side-padding) !important;
+  padding-right: var(--attach-side-padding) !important;
+}
+
+/* Smaller margin between text area and attach button */
+[class^="textArea"] > div > div {
+  margin-left: var(--text-area-left-margin) !important;
 }
 
 /* Hide the details in the top bar */
