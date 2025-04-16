@@ -14,7 +14,7 @@
 }
 
 /* Hide the details in the top bar */
-[class^="bar"] {
+[class^="bar_"] {
   display: none;
 }
 
